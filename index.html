@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -206,6 +206,108 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://recordmind.com/error-installing-software/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ERROR404">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Recordmind">
+      <meta itemprop="description" content="Record my simple life and code.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Recordmind">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/error-installing-software/" class="post-title-link" itemprop="url">解决Mac系统安装软件各种打不开</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-07-22 16:28:58 / Modified: 16:52:55" itemprop="dateCreated datePublished" datetime="2023-07-22T16:28:58+08:00">2023-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">记录</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://raw.githubusercontent.com/wuyueerhao/upimage/master/Mac-Error-install-software.webp" alt="img"></p>
+<h3 id="1-错误提示：无法确认开发者的身份"><a href="#1-错误提示：无法确认开发者的身份" class="headerlink" title="1. 错误提示：无法确认开发者的身份"></a>1. 错误提示：无法确认开发者的身份</h3><p>解决方法：开启任何来源</p>
+<h4 id="方法1"><a href="#方法1" class="headerlink" title="方法1:"></a>方法1:</h4><p>在“系统偏好设置” &gt; “安全性与隐私” &gt; “通用”选项卡中，允许从App Store和被认可的开发者下载的软件。</p>
+<h4 id="方法2"><a href="#方法2" class="headerlink" title="方法2:"></a>方法2:</h4><p>绕过Gatekeeper</p>
+<p>操作如下 ：打开“终端”，输入以下命令后回车，输入电脑密码，再回车： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-错误提示：文件已损坏"><a href="#2-错误提示：文件已损坏" class="headerlink" title="2. 错误提示：文件已损坏"></a>2. 错误提示：文件已损坏</h3><p>这通常是macOS的安全功能“Gatekeeper”起作用的结果。</p>
+<h4 id="方法1-1"><a href="#方法1-1" class="headerlink" title="方法1:"></a>方法1:</h4><p>更新软件源</p>
+<p>确保您从官方或可信任的来源下载软件。重新下载软件并从官方网站或Mac App Store下载可以避免由于下载来源不可信导致的问题。</p>
+<h4 id="方法2-1"><a href="#方法2-1" class="headerlink" title="方法2:"></a>方法2:</h4><p>授予应用程序完整性保护权限</p>
+<p>打开“终端”，输入以下命令后回车，输入电脑密码，再回车：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xattr -r -d com.apple.quarantine &lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中为应用程序的路径。只需把程序拖进终端即可获取路径。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xattr -r -d com.apple.quarantine /Applications/Adobe\ Zii\ 2020\ 5.0.9.app</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/error-installing-software/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1008,102 +1110,6 @@
 <h4 id="没有试错资本"><a href="#没有试错资本" class="headerlink" title="没有试错资本"></a>没有试错资本</h4><p>有钱家的孩子，可以试错，不断试不断成长，实践出真知，一般家庭的孩子或许可以试错一两次，但大部分错一次就跌入谷底，然后起起伏伏，直到自己撞得头破血流了，尝尽疾苦才能明白一些规则或积累一点资本，却被社会磨尽了锐气，像可怜的闰土，背负着自己的家庭，跌入轮回的循环。</p>
 <h4 id="时间成本"><a href="#时间成本" class="headerlink" title="时间成本"></a>时间成本</h4><p>认知层次的领悟和传承，资本的积累与继承，都是需要时间的，老鼠的孩子会打洞，穷人家的孩子所有的一切都只能自己花时间去积累，学习，领悟，去提高一些层次，获得一些资本!然而，很多大好的青春岁月和美好的事物就这样消失了，以及没有时间顾及下一代，孩子潜意识造成的缺陷永远难以弥补。别人的顺利，都是上一代人拒绝安稳、拼搏奋斗、不断试错传承来的。</p>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://recordmind.com/Elegant-use-of-CleanMyMac-X/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ERROR404">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Recordmind">
-      <meta itemprop="description" content="Record my simple life and code.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Recordmind">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Elegant-use-of-CleanMyMac-X/" class="post-title-link" itemprop="url">优雅的使用 CleanMyMac X 4.12.6 中文版</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-02-27 10:37:00" itemprop="dateCreated datePublished" datetime="2023-02-27T10:37:00+08:00">2023-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-03-06 15:38:42" itemprop="dateModified" datetime="2023-03-06T15:38:42+08:00">2023-03-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://raw.githubusercontent.com/wuyueerhao/upimage/master/screenshot-cleanmymac-x-1.png" alt="MAC系统清理CleanMyMac X破解版- Mac软件"></p>
-<h1 id="CleanMyMac-X"><a href="#CleanMyMac-X" class="headerlink" title="CleanMyMac X"></a>CleanMyMac X</h1><p>免费解锁（几乎）所有 CleanMyMac X 的功能！</p>
-<p>已更新至版本 4.12.6（App Store）- Intel 芯片</p>
-<p>不支持 Apple Silicon。</p>
-<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Elegant-use-of-CleanMyMac-X/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
