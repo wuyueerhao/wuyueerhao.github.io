@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -206,6 +206,109 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://recordmind.com/about-excel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ERROR404">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Recordmind">
+      <meta itemprop="description" content="Record my simple life and code.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Recordmind">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/about-excel/" class="post-title-link" itemprop="url">Excel工作表中如何高亮选中单元格所在的行和列</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-07-30 20:37:00 / Modified: 20:38:30" itemprop="dateCreated datePublished" datetime="2023-07-30T20:37:00+08:00">2023-07-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>WPS表格里面有这样一个功能，选中一个单元格以后，所在的行和列就会自动高亮。</p>
+<p>这样一来，查看相关的数据就会比较清楚便捷。</p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/upimage/master/image-20230730202948134.png" alt="image-20230730202948134"></p>
+<p>在Excel里面没有直接的这一项功能，要在 Excel 中高亮显示选中单元格的行和列，可以使用条件格式来完成。</p>
+<p>下面的步骤说明了如何操作：</p>
+<ol>
+<li><p>首先，选中你需要应用高亮的范围。假设需要在整个工作表上应用这个高亮，过点击左上角的箭头（在行号和列字母交界处）来选中整个工作表。</p>
+</li>
+<li><p>在 Excel 的菜单中找到 “条件格式” 的选项。</p>
+</li>
+<li><p>在 “条件格式” 的下拉菜单中，选择 “新建规则”。</p>
+</li>
+<li><p>在新的窗口中，选择 “使用公式确定要设置格式的单元格”。</p>
+</li>
+<li><p>在下面的公式输入框中，输入如下公式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=OR(ROW()=CELL(&quot;row&quot;),COLUMN()=CELL(&quot;col&quot;))</span><br></pre></td></tr></table></figure>
+<p>这个公式的意思是，如果当前单元格的行号或列号与选中单元格的行号或列号相同，就将其高亮。</p>
+</li>
+<li><p>点击 “格式” 按钮，在弹出的窗口中，选择你想要的高亮颜色，然后点击 “确定”。</p>
+</li>
+<li><p>在 “新建格式规则” 的窗口中，再次点击 “确定”。</p>
+</li>
+</ol>
+<p>这时，随便双击一个单元格，然后再选中需要高亮行的单元格，这一行就会被高亮了。</p>
+<p>注意：公式并不会随着选中单元格变化而更新，所以需要先双击其他的单元格激活，然后再选中目标单元格。此外，也可以先选中目标单元格，按F9进行重新计算，这样也能高亮选中单元格所在行。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1029,95 +1132,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/kaiqiao-hou-bianhua/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://recordmind.com/Stick-with-it-for-30-days/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ERROR404">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Recordmind">
-      <meta itemprop="description" content="Record my simple life and code.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Recordmind">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Stick-with-it-for-30-days/" class="post-title-link" itemprop="url">把一件事坚持30天会怎么样?</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-02-28 11:18:24 / Modified: 11:23:22" itemprop="dateCreated datePublished" datetime="2023-02-28T11:18:24+08:00">2023-02-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>1、坚持三十天不看片，保正充足睡眠，你的气质和精神状态能有翻天覆地的变化。</strong><br>猥琐颓废，无精打采，对事情无法集中注意力——&gt;意气风发，积极有活力，做任何事情都能够全神贯注。<br>真的是这样。</p>
-<p><strong>2、坚持三十天早睡早起，吃水果，喝一定量的水，你的皮肤会发生翻天覆地的变化。</strong><br>如果你能够做到，那就可以短时间同毛孔粗大，油皮痘肌挥手告别，如果能长期继续坚持下去，那就可以彻底远离油性皮肤，从此成为一个皮肤细腻的人。<br>这可比花一大笔钱去买各种洗面奶，复原乳有用多了。</p>
-<p><strong>3、坚持三十天每天只吃一小碗米饭，多吃点膳食纤维高的蔬菜，不吃其他高糖食品，能够很有效的减肥。</strong><br>这样可比吃一些减肥产品有用多了，如果在能够辅佐一定量的运动，如<strong>慢跑三十分钟，跳绳一千个或其他有氧运动</strong>三十天至少能瘦个五斤。</p>
-<p><strong>4、坚持三十天每天积累一些词句，并且抽时间背下来，那你的文笔能够得到极大的提升。</strong><br>如果能够长期坚持下去，假以时日，那么你的文字功底将会变得深不可测，无论什么材料，无论什么话题，都能够应付自如。<br>飞花摘叶皆可伤人，草木竹石皆可为剑。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Stick-with-it-for-30-days/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
