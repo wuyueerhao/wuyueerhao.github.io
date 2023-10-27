@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -206,6 +206,107 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://recordmind.com/how-block-YouTube-Ad-blockers-violate-YouTube-s-Terms-of-Service/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ERROR404">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Recordmind">
+      <meta itemprop="description" content="Record my simple life and code.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Recordmind">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/how-block-YouTube-Ad-blockers-violate-YouTube-s-Terms-of-Service/" class="post-title-link" itemprop="url">如何屏蔽 YouTube Ad blockers violate YouTube's Terms of Service</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-10-27 18:10:11 / Modified: 18:11:04" itemprop="dateCreated datePublished" datetime="2023-10-27T18:10:11+08:00">2023-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://raw.githubusercontent.com/wuyueerhao/upimage/master/image-20231027175702241.png" alt="image-20231027175702241"></p>
+<p>操作步骤： （已 chrome 为例）</p>
+<ol>
+<li><p>下载并安装uBlock Origin。</p>
+<p><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm</a></p>
+</li>
+<li><p>添加“自订静态过滤规则”。</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">youtube.<span class="property">com</span>##+<span class="title function_">js</span>(set, yt.<span class="property">config_</span>.<span class="property">openPopupConfig</span>.<span class="property">supportedPopups</span>.<span class="property">adBlockMessageViewModel</span>, <span class="literal">false</span>)</span><br><span class="line">youtube.<span class="property">com</span>##+<span class="title function_">js</span>(set, <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">adBlocksFound</span>, <span class="number">0</span>)</span><br><span class="line">youtube.<span class="property">com</span>##+<span class="title function_">js</span>(set, ytplayer.<span class="property">config</span>.<span class="property">args</span>.<span class="property">raw_player_response</span>.<span class="property">adPlacements</span>, [])</span><br><span class="line">youtube.<span class="property">com</span>##+<span class="title function_">js</span>(set, <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">hasAllowedInstreamAd</span>, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<p>   正常情况下，步骤 2 之后刷新当前视频页面即可，如果不生效，可以按步骤 3 的操作</p>
+<ol start="3">
+<li><p>在uBlock Origin设置–规则列表 选项中，点击“清除所有缓存”，然后点击“立即更新”。 </p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/upimage/master/image-20231027180205452.png" alt="image-20231027180205452"></p>
+</li>
+<li><p>在Youtube页面，关闭除了uBlock Origin以外的广告拦截插件，如Adblock。 </p>
+</li>
+<li><p>刷新页面即可。</p>
+</li>
+<li><p>若突然无法观看，请重复步骤3。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1068,102 +1169,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/error-installing-software/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://recordmind.com/ChatGPT-Midjourney/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ERROR404">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Recordmind">
-      <meta itemprop="description" content="Record my simple life and code.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Recordmind">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/ChatGPT-Midjourney/" class="post-title-link" itemprop="url">ChatGPT-Midjourney:一键免费部署你的私人 ChatGPT+Midjourney 网页应用</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-06-10 21:15:58 / Modified: 21:23:52" itemprop="dateCreated datePublished" datetime="2023-06-10T21:15:58+08:00">2023-06-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>ChatGPT Midjourney，由博主<a target="_blank" rel="noopener" href="https://github.com/Licoy">Licoy</a>开发，可一键免费部署你的私人 ChatGPT+Midjourney 网页应用（基于<a target="_blank" rel="noopener" href="https://github.com/Yidadaa/ChatGPT-Next-Web">ChatGPT-Next-Web</a>开发）</p>
-<p><img src="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/cover.png" alt="主界面"></p>
-<h4 id="功能支持"><a href="#功能支持" class="headerlink" title="功能支持"></a>功能支持</h4><ul>
-<li>原<code>ChatGPT-Next-Web</code>所有功能</li>
-<li>midjourney <code>imagin</code> 想象</li>
-<li>midjourney <code>upscale</code> 放大</li>
-<li>midjourney <code>variation</code> 变幻</li>
-<li>midjourney <code>describe</code> 识图</li>
-<li>midjourney <code>blend</code> 混图</li>
-<li>midjourney 垫图</li>
-<li>绘图进度百分比、实时图像显示
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/ChatGPT-Midjourney/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
