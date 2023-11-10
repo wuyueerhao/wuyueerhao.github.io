@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1033,7 +1033,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://recordmind.com/Elegant-use-of-CleanMyMac-X/">
+    <link itemprop="mainEntityOfPage" href="http://recordmind.com/wordpress-get-the-previous-and-next-post-of-an-article/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -1051,7 +1051,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Elegant-use-of-CleanMyMac-X/" class="post-title-link" itemprop="url">优雅的使用 CleanMyMac X 4.12.6 中文版</a>
+          <a href="/wordpress-get-the-previous-and-next-post-of-an-article/" class="post-title-link" itemprop="url">WordPress获取文章的上一篇和下一篇</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1062,14 +1062,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-02-27 10:37:00" itemprop="dateCreated datePublished" datetime="2023-02-27T10:37:00+08:00">2023-02-27</time>
+      <time title="Created: 2023-02-24 21:45:05" itemprop="dateCreated datePublished" datetime="2023-02-24T21:45:05+08:00">2023-02-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-03-06 15:38:42" itemprop="dateModified" datetime="2023-03-06T15:38:42+08:00">2023-03-06</time>
+      <time title="Modified: 2023-02-26 18:01:02" itemprop="dateModified" datetime="2023-02-26T18:01:02+08:00">2023-02-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1091,14 +1091,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://raw.githubusercontent.com/wuyueerhao/upimage/master/screenshot-cleanmymac-x-1.png" alt="MAC系统清理CleanMyMac X破解版- Mac软件"></p>
-<h1 id="CleanMyMac-X"><a href="#CleanMyMac-X" class="headerlink" title="CleanMyMac X"></a>CleanMyMac X</h1><p>免费解锁（几乎）所有 CleanMyMac X 的功能！</p>
-<p>已更新至版本 4.12.6（App Store）- Intel 芯片</p>
-<p>不支持 Apple Silicon。</p>
-<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2>
+          <p>WordPress 提供了两个快捷函数来获取上一篇&#x2F;下一篇文章，自动生成完整的 a 标签，格式为：<code>&lt;a href=&quot;文章链接&quot;&gt;文章标题&lt;/a&gt;</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php previous_post_link(&#x27;上一篇：%link&#x27;); ?&gt;</span><br><span class="line">完整语法：previous_post_link( $format, $name, $in_same_cat, $excluded_categories = &quot;&quot;);</span><br><span class="line">&lt;?php next_post_link(&#x27;下一篇：%link&#x27;); ?&gt;</span><br><span class="line">完整语法：next_post_link($format, $name, $in_same_cat, $excluded_categories = &quot;&quot;);</span><br></pre></td></tr></table></figure>
+
+
+<p>参数介绍：<br>$format：格式化被显示的字符串，缺省值是”‘? %link”，第二个函数缺省值是”%link ?”。<br>$name：被显示的字符串，缺省值是上一篇或下一篇的”$title”，也可以设置为其它你想显示的字符串。<br>$in_same_cat ：是否显式同一类别下的文章，缺省值false表示不区分类别。<br>$excluded_categories：是否排除掉某分类，缺省值不排除 ，多个以英文逗号分隔。<br>例：</p>
+<blockquote>
+<p>previous_post_link(“%link”,”&lt; 上一篇”,true) &#x2F;&#x2F; </p>
+</blockquote>
+<p>显示： &lt; 上一篇<br>使用默认的方式会遇到一个小问题，如果当前文章是最新或者最后一篇，在输出结果时会在上一篇&#x2F;下一篇 显示当前文章，只需要在输出时加一个判断即可。<br>Wordpress判断文章是否有上一篇和下一篇</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/Elegant-use-of-CleanMyMac-X/#more" rel="contents">
+              <a class="btn" href="/wordpress-get-the-previous-and-next-post-of-an-article/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
