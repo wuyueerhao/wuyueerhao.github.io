@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"recordmind.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="WordPress 提供了两个快捷函数来获取上一篇&#x2F;下一篇文章，自动生成完整的 a 标签，格式为：&lt;a href&#x3D;&quot;文章链接&quot;&gt;文章标题&lt;&#x2F;a&gt;。 1234&lt;?php previous_post_link(&amp;#x27;上一篇：%link&amp;#x27;); ?&gt;完整语法：previous_post_link( $format, $nam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WordPress获取文章的上一篇和下一篇">
+<meta property="og:url" content="http://recordmind.com/wordpress-get-the-previous-and-next-post-of-an-article/index.html">
+<meta property="og:site_name" content="Recordmind">
+<meta property="og:description" content="WordPress 提供了两个快捷函数来获取上一篇&#x2F;下一篇文章，自动生成完整的 a 标签，格式为：&lt;a href&#x3D;&quot;文章链接&quot;&gt;文章标题&lt;&#x2F;a&gt;。 1234&lt;?php previous_post_link(&amp;#x27;上一篇：%link&amp;#x27;); ?&gt;完整语法：previous_post_link( $format, $nam">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-24T13:45:05.000Z">
+<meta property="article:modified_time" content="2023-02-26T10:01:02.979Z">
+<meta property="article:author" content="ERROR404">
+<meta property="article:tag" content="Wordpress">
+<meta property="article:tag" content="小技巧">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://recordmind.com/wordpress-get-the-previous-and-next-post-of-an-article/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://recordmind.com/wordpress-get-the-previous-and-next-post-of-an-article/","path":"wordpress-get-the-previous-and-next-post-of-an-article/","title":"WordPress获取文章的上一篇和下一篇"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>WordPress获取文章的上一篇和下一篇 | Recordmind</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Recordmind</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just a simple blog!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ERROR404"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">ERROR404</p>
+  <div class="site-description" itemprop="description">Record my simple life and code.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wuyueerhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wuyueerhao" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wuyueerhao@gmail.com" title="E-Mail → mailto:wuyueerhao@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1896912582" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1896912582" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://xiaonvhaier.com/" title="https:&#x2F;&#x2F;xiaonvhaier.com" rel="noopener" target="_blank">小女孩</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://kn007.net/" title="https:&#x2F;&#x2F;kn007.net" rel="noopener" target="_blank">Kn007</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://recordmind.com/wordpress-get-the-previous-and-next-post-of-an-article/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ERROR404">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Recordmind">
+      <meta itemprop="description" content="Record my simple life and code.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="WordPress获取文章的上一篇和下一篇 | Recordmind">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          WordPress获取文章的上一篇和下一篇
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-02-24 21:45:05" itemprop="dateCreated datePublished" datetime="2023-02-24T21:45:05+08:00">2023-02-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-02-26 18:01:02" itemprop="dateModified" datetime="2023-02-26T18:01:02+08:00">2023-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">记录</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>WordPress 提供了两个快捷函数来获取上一篇&#x2F;下一篇文章，自动生成完整的 a 标签，格式为：<code>&lt;a href=&quot;文章链接&quot;&gt;文章标题&lt;/a&gt;</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php previous_post_link(&#x27;上一篇：%link&#x27;); ?&gt;</span><br><span class="line">完整语法：previous_post_link( $format, $name, $in_same_cat, $excluded_categories = &quot;&quot;);</span><br><span class="line">&lt;?php next_post_link(&#x27;下一篇：%link&#x27;); ?&gt;</span><br><span class="line">完整语法：next_post_link($format, $name, $in_same_cat, $excluded_categories = &quot;&quot;);</span><br></pre></td></tr></table></figure>
+
+
+<p>参数介绍：<br>$format：格式化被显示的字符串，缺省值是”‘? %link”，第二个函数缺省值是”%link ?”。<br>$name：被显示的字符串，缺省值是上一篇或下一篇的”$title”，也可以设置为其它你想显示的字符串。<br>$in_same_cat ：是否显式同一类别下的文章，缺省值false表示不区分类别。<br>$excluded_categories：是否排除掉某分类，缺省值不排除 ，多个以英文逗号分隔。<br>例：</p>
+<blockquote>
+<p>previous_post_link(“%link”,”&lt; 上一篇”,true) &#x2F;&#x2F; </p>
+</blockquote>
+<p>显示： &lt; 上一篇<br>使用默认的方式会遇到一个小问题，如果当前文章是最新或者最后一篇，在输出结果时会在上一篇&#x2F;下一篇 显示当前文章，只需要在输出时加一个判断即可。<br>Wordpress判断文章是否有上一篇和下一篇</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">  $prev_post = get_previous_post();</span><br><span class="line">  if ( ! empty( $prev_post ) ): ?&gt;</span><br><span class="line">    &lt;a href=&quot;&lt;?php echo get_permalink( $prev_post-&gt;ID ); ?&gt;&quot;&gt;</span><br><span class="line">      &lt;?php echo apply_filters( &#x27;the_title&#x27;, $prev_post-&gt;post_title ); ?&gt;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">  &lt;?php else: ?&gt;</span><br><span class="line">    &lt;span&gt;没有上一页了&lt;/span&gt;</span><br><span class="line">  &lt;?php endif;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果有上一篇：显示上一篇的标题及链接，没有提示：没有上一篇了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">  $next_post = get_next_post();</span><br><span class="line">  if(!empty($next_post)):?&gt;</span><br><span class="line">    &lt;a href=&quot;&lt;?php echo get_permalink( $next_post-&gt;ID ); ?&gt;&quot;&gt;</span><br><span class="line">      &lt;?php echo apply_filters( &#x27;the_title&#x27;, $next_post-&gt;post_title ); ?&gt;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">  &lt;?php else: ?&gt;</span><br><span class="line">    &lt;span&gt;没有下一页了&lt;/span&gt;</span><br><span class="line">  &lt;?php endif;</span><br><span class="line">?&gt; </span><br></pre></td></tr></table></figure>
+
+<p>如果有下一篇：显示下一篇的标题及链接，没有提示：没有下一篇了</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Wordpress/" rel="tag"># Wordpress</a>
+              <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/" rel="tag"># 小技巧</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/FRP-for-remote-connectivity/" rel="prev" title="FRP内网穿透实现远程连接">
+                  <i class="fa fa-chevron-left"></i> FRP内网穿透实现远程连接
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Elegant-use-of-CleanMyMac-X/" rel="next" title="优雅的使用 CleanMyMac X 4.12.6 中文版">
+                  优雅的使用 CleanMyMac X 4.12.6 中文版 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ERROR404</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wuyueerhao","repo":"comments","client_id":"4697c6556f23e5a42ef5","client_secret":"bc54d233eb1f60401c2287b530a4aaa51d4bdcf2","admin_user":"wuyueerhao","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"en","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"db79631282ecfa852265aff5e137a1eb"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"recordmind.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="ChatGPT Midjourney，由博主Licoy开发，可一键免费部署你的私人 ChatGPT+Midjourney 网页应用（基于ChatGPT-Next-Web开发）  功能支持 原ChatGPT-Next-Web所有功能 midjourney imagin 想象 midjourney upscale 放大 midjourney variation 变幻 midjourney descri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ChatGPT-Midjourney:一键免费部署你的私人 ChatGPT+Midjourney 网页应用">
+<meta property="og:url" content="http://recordmind.com/ChatGPT-Midjourney/index.html">
+<meta property="og:site_name" content="Recordmind">
+<meta property="og:description" content="ChatGPT Midjourney，由博主Licoy开发，可一键免费部署你的私人 ChatGPT+Midjourney 网页应用（基于ChatGPT-Next-Web开发）  功能支持 原ChatGPT-Next-Web所有功能 midjourney imagin 想象 midjourney upscale 放大 midjourney variation 变幻 midjourney descri">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/cover.png">
+<meta property="og:image" content="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-6.png">
+<meta property="og:image" content="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-5.png">
+<meta property="og:image" content="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-4.png">
+<meta property="og:image" content="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-1.png">
+<meta property="og:image" content="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-2.png">
+<meta property="article:published_time" content="2023-06-10T13:15:58.000Z">
+<meta property="article:modified_time" content="2023-06-10T13:23:52.630Z">
+<meta property="article:author" content="ERROR404">
+<meta property="article:tag" content="ChatGPT">
+<meta property="article:tag" content="Midjourney">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/cover.png">
+
+
+<link rel="canonical" href="http://recordmind.com/ChatGPT-Midjourney/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://recordmind.com/ChatGPT-Midjourney/","path":"ChatGPT-Midjourney/","title":"ChatGPT-Midjourney:一键免费部署你的私人 ChatGPT+Midjourney 网页应用"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ChatGPT-Midjourney:一键免费部署你的私人 ChatGPT+Midjourney 网页应用 | Recordmind</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Recordmind</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just a simple blog!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E6%94%AF%E6%8C%81"><span class="nav-number">1.</span> <span class="nav-text">功能支持</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">1.1.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Midjourney-Proxy%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">Midjourney-Proxy地址配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Docker%E9%83%A8%E7%BD%B2"><span class="nav-number">1.3.</span> <span class="nav-text">Docker部署</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2"><span class="nav-number">1.4.</span> <span class="nav-text">手动部署</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%B7%E5%9B%BE%E3%80%81%E8%AF%86%E5%9B%BE%E3%80%81%E5%9E%AB%E5%9B%BE"><span class="nav-number">2.1.</span> <span class="nav-text">混图、识图、垫图</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%AA%E5%9B%BE"><span class="nav-number">3.</span> <span class="nav-text">截图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%B7%E5%9B%BE%E3%80%81%E8%AF%86%E5%9B%BE%E3%80%81%E5%9E%AB%E5%9B%BE-1"><span class="nav-number">3.1.</span> <span class="nav-text">混图、识图、垫图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%AE%9E%E6%97%B6%E8%8E%B7%E5%8F%96"><span class="nav-number">3.2.</span> <span class="nav-text">状态实时获取</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89midjourney%E5%8F%82%E6%95%B0"><span class="nav-number">3.3.</span> <span class="nav-text">自定义midjourney参数</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ERROR404"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">ERROR404</p>
+  <div class="site-description" itemprop="description">Record my simple life and code.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wuyueerhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wuyueerhao" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wuyueerhao@gmail.com" title="E-Mail → mailto:wuyueerhao@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1896912582" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1896912582" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://xiaonvhaier.com/" title="https:&#x2F;&#x2F;xiaonvhaier.com" rel="noopener" target="_blank">小女孩</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://kn007.net/" title="https:&#x2F;&#x2F;kn007.net" rel="noopener" target="_blank">Kn007</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://recordmind.com/ChatGPT-Midjourney/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ERROR404">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Recordmind">
+      <meta itemprop="description" content="Record my simple life and code.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ChatGPT-Midjourney:一键免费部署你的私人 ChatGPT+Midjourney 网页应用 | Recordmind">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ChatGPT-Midjourney:一键免费部署你的私人 ChatGPT+Midjourney 网页应用
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-06-10 21:15:58 / Modified: 21:23:52" itemprop="dateCreated datePublished" datetime="2023-06-10T21:15:58+08:00">2023-06-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">记录</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>ChatGPT Midjourney，由博主<a target="_blank" rel="noopener" href="https://github.com/Licoy">Licoy</a>开发，可一键免费部署你的私人 ChatGPT+Midjourney 网页应用（基于<a target="_blank" rel="noopener" href="https://github.com/Yidadaa/ChatGPT-Next-Web">ChatGPT-Next-Web</a>开发）</p>
+<p><img src="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/cover.png" alt="主界面"></p>
+<h4 id="功能支持"><a href="#功能支持" class="headerlink" title="功能支持"></a>功能支持</h4><ul>
+<li>原<code>ChatGPT-Next-Web</code>所有功能</li>
+<li>midjourney <code>imagin</code> 想象</li>
+<li>midjourney <code>upscale</code> 放大</li>
+<li>midjourney <code>variation</code> 变幻</li>
+<li>midjourney <code>describe</code> 识图</li>
+<li>midjourney <code>blend</code> 混图</li>
+<li>midjourney 垫图</li>
+<li>绘图进度百分比、实时图像显示<span id="more"></span></li>
+</ul>
+<h5 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h5><h5 id="Midjourney-Proxy地址配置"><a href="#Midjourney-Proxy地址配置" class="headerlink" title="Midjourney-Proxy地址配置"></a>Midjourney-Proxy地址配置</h5><ul>
+<li>环境变量中</li>
+</ul>
+<p>在项目的根目录下的<code>.env</code>文件中的<code>MIDJOURNEY_PROXY_URL</code>填入你的midjourney服务地址，例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MIDJOURNEY_PROXY_URL=http:<span class="comment">//localhost:8080</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>⚠️注意：如果你使用的是Docker部署，那么这里的地址应该是<code>http://公网IP:port</code>，而不是<code>http://localhost:port</code>，因为Docker中的容器是隔离的，<code>localhost</code>指向的是容器内部的地址，而不是宿主机的地址。</p>
+</blockquote>
+<ul>
+<li>界面中</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://github.com/Licoy/ChatGPT-Midjourney/blob/master/docs/images/mj-6.png"><img src="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-6.png" alt="mj-6"></a></p>
+<ul>
+<li>其他方式</li>
+</ul>
+<p>如下方的Docker等直接参考对应的部署方式。</p>
+<h5 id="Docker部署"><a href="#Docker部署" class="headerlink" title="Docker部署"></a>Docker部署</h5><ul>
+<li><p>运行 <code>midjourney-proxy</code> (Midjourney API服务，更多参数配置可以参考：<a target="_blank" rel="noopener" href="https://github.com/novicezk/midjourney-proxy">midjourney-proxy</a>)</p>
+<pre>
+docker run -d --name midjourney-proxy \
+ -p 8080:8080 \
+ -e mj.discord.guild-id=xxx \
+ -e mj.discord.channel-id=xxx \
+ -e mj.discord.user-token=xxx \
+ -e mj.discord.bot-token=xxx \
+ --restart=always \
+ novicezk/midjourney-proxy:2.1.6 
+</pre>
+</li>
+<li><p>运行 &#96;ChatGPT-Midjourney</p>
+<pre>
+docker pull licoy/chatgpt-midjourney
+docker run -d -p 3000:3000 \
+   -e OPENAI_API_KEY="sk-xxx" \
+   -e CODE="123456" \
+   -e BASE_URL="https://api.openai.com" \
+   -e MIDJOURNEY_PROXY_URL="http://ip:port" \
+   licoy/chatgpt-midjourney  
+</pre></li>
+</ul>
+<h5 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h5><ul>
+<li>clone本项目到本地</li>
+<li>安装依赖</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run build</span><br><span class="line">npm run start // #或者开发模式启动： npm run dev</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>在输入框中以<code>/mj</code>开头输入您的绘画描述，即可进行创建绘画，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mj a dog</span><br></pre></td></tr></table></figure>
+
+<h5 id="混图、识图、垫图"><a href="#混图、识图、垫图" class="headerlink" title="混图、识图、垫图"></a>混图、识图、垫图</h5><p><a target="_blank" rel="noopener" href="https://github.com/Licoy/ChatGPT-Midjourney/blob/master/docs/images/mj-5.png"><img src="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-5.png" alt="mj-5"></a></p>
+<blockquote>
+<p>提示：垫图模式&#x2F;识图(describe)模式只会使用第一张图片，混图(blend)模式会按顺序使用选中的两张图片（点击图片可以移除）</p>
+</blockquote>
+<h4 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h4><h5 id="混图、识图、垫图-1"><a href="#混图、识图、垫图-1" class="headerlink" title="混图、识图、垫图"></a>混图、识图、垫图</h5><p><a target="_blank" rel="noopener" href="https://github.com/Licoy/ChatGPT-Midjourney/blob/master/docs/images/mj-4.png"><img src="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-4.png" alt="mj-4"></a></p>
+<h5 id="状态实时获取"><a href="#状态实时获取" class="headerlink" title="状态实时获取"></a>状态实时获取</h5><p><a target="_blank" rel="noopener" href="https://github.com/Licoy/ChatGPT-Midjourney/blob/master/docs/images/mj-1.png"><img src="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-1.png" alt="mj-2"></a></p>
+<h5 id="自定义midjourney参数"><a href="#自定义midjourney参数" class="headerlink" title="自定义midjourney参数"></a>自定义midjourney参数</h5><p><a target="_blank" rel="noopener" href="https://github.com/Licoy/ChatGPT-Midjourney/blob/master/docs/images/mj-2.png"><img src="https://github.com/Licoy/ChatGPT-Midjourney/raw/master/docs/images/mj-2.png" alt="mj-2"></a></p>
+<p>GitHub地址：<a target="_blank" rel="noopener" href="https://github.com/Licoy/ChatGPT-Midjourney">https://github.com/Licoy/ChatGPT-Midjourney</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ChatGPT/" rel="tag"># ChatGPT</a>
+              <a href="/tags/Midjourney/" rel="tag"># Midjourney</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/quickly-build-chatgpt-site/" rel="prev" title="10分钟快速搭建可商用的ChatGPT站点-GPTLink">
+                  <i class="fa fa-chevron-left"></i> 10分钟快速搭建可商用的ChatGPT站点-GPTLink
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/error-installing-software/" rel="next" title="解决Mac系统安装软件各种打不开">
+                  解决Mac系统安装软件各种打不开 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ERROR404</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wuyueerhao","repo":"comments","client_id":"4697c6556f23e5a42ef5","client_secret":"bc54d233eb1f60401c2287b530a4aaa51d4bdcf2","admin_user":"wuyueerhao","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"en","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"f4df9b4d119fac4414431939604a03cc"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
