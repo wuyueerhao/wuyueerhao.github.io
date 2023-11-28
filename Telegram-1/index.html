@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"recordmind.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最近很多小伙伴咨询telegram国内手机号收不到验证码的问题，整理了一些关于该问题的解决方案。 收不到Telegram短信验证码的原因可能包括以下几点：  手机自身环境限制了Telegram联网  短信被拦截  号码错误  验证码发送到其他已登陆的设备端  使用了第三方客户端  IP问题  代理软件没有正确设置  Telegram网络故障  验证过于频繁   针对这些问题，可参考如下的解决方案：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Telegram 收不到短信怎么办？">
+<meta property="og:url" content="http://recordmind.com/Telegram-1/index.html">
+<meta property="og:site_name" content="Recordmind">
+<meta property="og:description" content="最近很多小伙伴咨询telegram国内手机号收不到验证码的问题，整理了一些关于该问题的解决方案。 收不到Telegram短信验证码的原因可能包括以下几点：  手机自身环境限制了Telegram联网  短信被拦截  号码错误  验证码发送到其他已登陆的设备端  使用了第三方客户端  IP问题  代理软件没有正确设置  Telegram网络故障  验证过于频繁   针对这些问题，可参考如下的解决方案：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/upimage/master/image-20231127233110368.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/upimage/master/image-20231127233121076.png">
+<meta property="article:published_time" content="2023-11-28T10:07:10.000Z">
+<meta property="article:modified_time" content="2023-11-28T10:09:10.473Z">
+<meta property="article:author" content="ERROR404">
+<meta property="article:tag" content="Telegram">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wuyueerhao/upimage/master/image-20231127233110368.png">
+
+
+<link rel="canonical" href="http://recordmind.com/Telegram-1/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://recordmind.com/Telegram-1/","path":"Telegram-1/","title":"Telegram 收不到短信怎么办？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Telegram 收不到短信怎么办？ | Recordmind</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Recordmind</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just a simple blog!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ERROR404"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">ERROR404</p>
+  <div class="site-description" itemprop="description">Record my simple life and code.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wuyueerhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wuyueerhao" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wuyueerhao@gmail.com" title="E-Mail → mailto:wuyueerhao@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1896912582" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1896912582" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://xiaonvhaier.com/" title="https:&#x2F;&#x2F;xiaonvhaier.com" rel="noopener" target="_blank">小女孩</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://kn007.net/" title="https:&#x2F;&#x2F;kn007.net" rel="noopener" target="_blank">Kn007</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://recordmind.com/Telegram-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ERROR404">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Recordmind">
+      <meta itemprop="description" content="Record my simple life and code.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Telegram 收不到短信怎么办？ | Recordmind">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Telegram 收不到短信怎么办？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-11-28 18:07:10 / Modified: 18:09:10" itemprop="dateCreated datePublished" datetime="2023-11-28T18:07:10+08:00">2023-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>最近很多小伙伴咨询telegram国内手机号收不到验证码的问题，整理了一些关于该问题的解决方案。</p>
+<p>收不到Telegram短信验证码的原因可能包括以下几点：</p>
+<ul>
+<li><p>手机自身环境限制了Telegram联网</p>
+</li>
+<li><p>短信被拦截</p>
+</li>
+<li><p>号码错误</p>
+</li>
+<li><p>验证码发送到其他已登陆的设备端</p>
+</li>
+<li><p>使用了第三方客户端</p>
+</li>
+<li><p>IP问题</p>
+</li>
+<li><p>代理软件没有正确设置</p>
+</li>
+<li><p>Telegram网络故障</p>
+</li>
+<li><p>验证过于频繁</p>
+</li>
+</ul>
+<p>针对这些问题，可参考如下的解决方案：</p>
+<ol>
+<li><p><strong>检查设备自身</strong></p>
+<p>查看手机有没有对Telegram进行限制，一些手机内置的安全软件会对特定的app进行限制</p>
+</li>
+<li><p><strong>检查一下手机的短信垃圾箱</strong></p>
+<p>运营商目前并没有屏蔽来自Telegram的注册短信验证服务，这是因为Telegram通过第三方公司提供短信服务，因此发送验证码的号码可能会有所不同。一般情况下，国内的手机号码（+86）可以接收Telegram验证码，但接收过程可能有所延迟，尤其是首次注册时。</p>
+<p>注册过程中如果多次尝试后仍无法收到验证码，可以考虑更换手机号码进行注册。推荐使用Google Voice等海外虚拟手机号码，以提高注册成功率。</p>
+</li>
+<li><p>**切换稳定干净的IP **</p>
+<p>使用机场的IP地址也需要谨慎选择，因为一些节点的IP地址被标识为高风险IP。</p>
+<p>当IP地址被Telegram标记为高风险时，只会影响到验证码的接收，对于日常使用并没有其他更多的影响。</p>
+<p>如何检测当前使用的IP的欺诈度及常用的工具有哪些，会写在下一篇文章里，需要的同学可以先使用 <strong>scamalytics.com</strong> 来检测</p>
+<p><strong><font color="red">检测工具所给出的数据，只做参考，不能用来做判断ip是否值得信任或者高质量的唯一标准，而且每一个平台的判断标准也不一样，IP能满足使用就可以了，不用过于追求检测给出的数值</font></strong></p>
+</li>
+<li><p><strong>外网环境故障</strong></p>
+<span id="more"></span>
+<p>先测试能不能访问Google或者YouTube ，如果可以就说明网络环境畅通，如果还是不行，看看有没开启全局代理模式。</p>
+<p>再查看Telegram的代理设置以否正常</p>
+<p>Telegram代理设置如下：</p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/upimage/master/image-20231127233110368.png" alt="image-20231127233110368"></p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/upimage/master/image-20231127233121076.png" alt="image-20231127233121076"></p>
+<p>具体的配置根据你使用的代理软件来填写，截图中是surge的代理配置</p>
+</li>
+<li><p><strong>安装了第三方Telegram APP客户端</strong></p>
+<p>官方版本的Telegram可以通过官方网站或Google play应用商店进行下载安卓版本，并且需要注意的是，官方版本是没有中文的。</p>
+<p>应用商店里搜索<strong>Telegram</strong>出现的<strong>Telegram中文版</strong>是第三方开发者基于Telegram的开源代码进行的二次开发，正常使用没有问题，但是需要注意风险。</p>
+<blockquote>
+<p>Telegram于2023年2月18日就暂停了第三方客户端的短信登录与注册。</p>
+</blockquote>
+<p>更换为官方客户端重新尝试</p>
+</li>
+<li><p><strong>Telegram服务器故障</strong></p>
+<p>概率比较小，耐心等待就行</p>
+</li>
+<li><p><strong>验证码发送到其他已登陆的设备端</strong></p>
+<p>当您尝试使用一个新号码注册Telegram，而系统提示验证码已发送到其他设备时，这通常意味着该号码是一个之前已用于注册Telegram的回收号码。以下是针对这种情况的解决步骤：</p>
+<ol>
+<li><p><strong>确认号码状态</strong>：如果你确认自己之前未在任何设备上使用过该号码进行Telegram登录，而这个号码是你最近获得的，那么很可能是由于这是一个回收号码造成的问题。</p>
+</li>
+<li><p><strong>退出和注销旧账号</strong>：尝试确保你已经从所有可能登录过该号码的Telegram账号上退出并注销。这可以帮助确保验证码只会发送到当前正在使用的设备上。</p>
+</li>
+<li><p><strong>更改密码和强制重新登录</strong>：如果无法确定哪些设备可能还与该号码有关联，可以尝试更改Telegram账户的密码，从而强制所有设备重新登录。这一措施有助于切断与旧设备的关联，确保验证码仅发送到您当前使用的设备。</p>
+</li>
+<li><p><strong>使用全新的手机号码注册</strong>：如果上述步骤无法解决问题，建议使用一个全新的、未曾使用过的手机号码进行注册。这样可以有效避免与回收号码相关的问题。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>如果有其它问题，欢迎留言反馈</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Telegram/" rel="tag"># Telegram</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Telegram-2/" rel="prev" title="Telegram的一些实用小技巧">
+                  <i class="fa fa-chevron-left"></i> Telegram的一些实用小技巧
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ERROR404</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wuyueerhao","repo":"comments","client_id":"4697c6556f23e5a42ef5","client_secret":"bc54d233eb1f60401c2287b530a4aaa51d4bdcf2","admin_user":"wuyueerhao","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"en","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"70b0194e7d6508536dca73f10602ff09"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
