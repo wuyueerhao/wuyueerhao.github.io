@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"recordmind.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="MoonTV 是一个开源、完全免费的影视聚合平台，支持 Cloudflare Pages、Vercel、Docker 等多种部署方式。一键部署即可拥有网页端、手机端、电视端都能访问的私有影视库，多源搜索、无广告、跨设备同步——真正的看片神器。  🌟 MoonTV 能做什么？为什么选择它？在如今视频平台会员费高涨、资源分散、广告泛滥的大环境下，MoonTV 提供了一个极具吸引力的解决方案：  聚合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="免费影视媒体库 MoonTV 部署全教程：跨设备同步 · 多用户管理">
+<meta property="og:url" content="http://recordmind.com/moontv-build/index.html">
+<meta property="og:site_name" content="Recordmind">
+<meta property="og:description" content="MoonTV 是一个开源、完全免费的影视聚合平台，支持 Cloudflare Pages、Vercel、Docker 等多种部署方式。一键部署即可拥有网页端、手机端、电视端都能访问的私有影视库，多源搜索、无广告、跨设备同步——真正的看片神器。  🌟 MoonTV 能做什么？为什么选择它？在如今视频平台会员费高涨、资源分散、广告泛滥的大环境下，MoonTV 提供了一个极具吸引力的解决方案：  聚合">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726110153683.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726105629589.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726105805446.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726110109228.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726111330349.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726140517706.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726140354153.png">
+<meta property="article:published_time" content="2025-08-05T07:40:12.000Z">
+<meta property="article:modified_time" content="2025-08-05T07:45:10.539Z">
+<meta property="article:author" content="ERROR404">
+<meta property="article:tag" content="MoonTV">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726110153683.png">
+
+
+<link rel="canonical" href="http://recordmind.com/moontv-build/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://recordmind.com/moontv-build/","path":"moontv-build/","title":"免费影视媒体库 MoonTV 部署全教程：跨设备同步 · 多用户管理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>免费影视媒体库 MoonTV 部署全教程：跨设备同步 · 多用户管理 | Recordmind</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Recordmind</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just a simple blog!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8C%9F-MoonTV-%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9%E5%AE%83%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">🌟 MoonTV 能做什么？为什么选择它？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%A7-%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80%E8%A7%88"><span class="nav-number">2.</span> <span class="nav-text">🔧 技术栈一览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E6%96%B0%E4%B8%8A%E7%BA%BF%E7%89%B9%E6%80%A7%EF%BC%9ADocker-Redis-%E6%90%AD%E5%BB%BA%E6%9B%B4%E5%BC%BA%E5%A4%A7"><span class="nav-number">3.</span> <span class="nav-text">最新上线特性：Docker + Redis 搭建更强大</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%9A%80-%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2-MoonTV%EF%BC%88%E4%BB%A5-Vercel-%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">🚀 快速部署 MoonTV（以 Vercel 为例）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A6-Vercel-%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">📦 Vercel 一键部署步骤：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8C%90-%E5%85%B6%E4%BB%96%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">🌐 其他部署方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%91-%E7%AE%A1%E7%90%86%E5%90%8E%E5%8F%B0%E4%B8%8E%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">🔑 管理后台与高级配置</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ERROR404"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">ERROR404</p>
+  <div class="site-description" itemprop="description">Record my simple life and code.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wuyueerhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wuyueerhao" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wuyueerhao@gmail.com" title="E-Mail → mailto:wuyueerhao@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/1896912582" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1896912582" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://xiaonvhaier.com/" title="https:&#x2F;&#x2F;xiaonvhaier.com" rel="noopener" target="_blank">小女孩</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://kn007.net/" title="https:&#x2F;&#x2F;kn007.net" rel="noopener" target="_blank">Kn007</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://recordmind.com/moontv-build/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ERROR404">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Recordmind">
+      <meta itemprop="description" content="Record my simple life and code.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="免费影视媒体库 MoonTV 部署全教程：跨设备同步 · 多用户管理 | Recordmind">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          免费影视媒体库 MoonTV 部署全教程：跨设备同步 · 多用户管理
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-08-05 15:40:12 / Modified: 15:45:10" itemprop="dateCreated datePublished" datetime="2025-08-05T15:40:12+08:00">2025-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>MoonTV 是一个开源、完全免费的影视聚合平台，支持 Cloudflare Pages、Vercel、Docker 等多种部署方式。一键部署即可拥有网页端、手机端、电视端都能访问的私有影视库，多源搜索、无广告、跨设备同步——真正的看片神器。</p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726110153683.png" alt="CleanShot 2025-07-26 at 11.01.42"></p>
+<h2 id="🌟-MoonTV-能做什么？为什么选择它？"><a href="#🌟-MoonTV-能做什么？为什么选择它？" class="headerlink" title="🌟 MoonTV 能做什么？为什么选择它？"></a>🌟 MoonTV 能做什么？为什么选择它？</h2><p>在如今视频平台会员费高涨、资源分散、广告泛滥的大环境下，MoonTV 提供了一个极具吸引力的解决方案：</p>
+<ul>
+<li><strong>聚合搜索全网资源</strong>：支持多个免费资源站，一次搜索即可获取全源结果，覆盖电影、电视剧、动漫、综艺等。</li>
+<li><strong>高清流畅在线播放</strong>：集成 ArtPlayer 和 HLS.js，播放体验媲美专业平台。</li>
+<li><strong>跨设备同步记录</strong>：支持本地存储和云端（如 Redis、Cloudflare D1），在多个设备之间同步播放进度和收藏。</li>
+<li><strong>PWA 支持</strong>：可添加到桌面、主屏幕使用，离线缓存提升使用便捷度。</li>
+<li><strong>响应式布局</strong>：电脑、手机、电视屏幕完美适配，操作流畅无压力。</li>
+<li><strong>完全开源 + 私有部署</strong>：可运行在你自己的服务器或免费平台上，数据完全掌控。</li>
+<li><strong>管理员后台</strong>：支持多账户、用户管理、自定义配置（需使用云存储）。</li>
+<li><strong>无广告 &#x2F; 实验性跳广告功能</strong>：告别片头片尾烦人广告。</li>
+</ul>
+<p>MoonTV 不仅适合个人用户建立私有观影平台，也逐渐成为自建 NAS 用户与影视爱好者的首选播放器。</p>
+<span id="more"></span>
+<h2 id="🔧-技术栈一览"><a href="#🔧-技术栈一览" class="headerlink" title="🔧 技术栈一览"></a>🔧 技术栈一览</h2><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>技术</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>前端框架</td>
+<td>Next.js 14 (App Router)</td>
+</tr>
+<tr>
+<td>UI&#x2F;样式</td>
+<td>Tailwind CSS 3</td>
+</tr>
+<tr>
+<td>编程语言</td>
+<td>TypeScript 4</td>
+</tr>
+<tr>
+<td>播放器</td>
+<td>ArtPlayer + HLS.js</td>
+</tr>
+<tr>
+<td>代码质量</td>
+<td>ESLint + Prettier + Jest</td>
+</tr>
+<tr>
+<td>部署方式</td>
+<td>支持 Vercel &#x2F; Cloudflare &#x2F; Docker &#x2F; 飞牛 OS 等</td>
+</tr>
+</tbody></table>
+<h2 id="最新上线特性：Docker-Redis-搭建更强大"><a href="#最新上线特性：Docker-Redis-搭建更强大" class="headerlink" title="最新上线特性：Docker + Redis 搭建更强大"></a>最新上线特性：Docker + Redis 搭建更强大</h2><p>据项目官方更新（2025 年 7 月初），最新版本已支持：</p>
+<ul>
+<li><strong>后台管理面板</strong>：docker + redis 存储方式下，通过访问 <code>/admin</code> 页面，可管理站点配置、视频源、权限和用户状态。</li>
+<li><strong>定时剧集刷新功能</strong>：每小时自动更新影片 &#x2F; 剧集总数，使播放记录和收藏显示更准确。</li>
+<li><strong>音量调节快捷键</strong>：桌面端支持键盘上下键调节音量，移动端直接使用设备音量键控制音量。</li>
+</ul>
+<p>目前即正在开发支持 D1 和 PG 存储的版本，未来会有更多部署选择。</p>
+<h2 id="🚀-快速部署-MoonTV（以-Vercel-为例）"><a href="#🚀-快速部署-MoonTV（以-Vercel-为例）" class="headerlink" title="🚀 快速部署 MoonTV（以 Vercel 为例）"></a>🚀 快速部署 MoonTV（以 Vercel 为例）</h2><p>MoonTV 支持多种部署方式，其中 Vercel 是最便捷的方式之一，<strong>无需服务器、永久免费、自动构建上线</strong>，适合没有服务器的新手用户。</p>
+<h3 id="📦-Vercel-一键部署步骤："><a href="#📦-Vercel-一键部署步骤：" class="headerlink" title="📦 Vercel 一键部署步骤："></a>📦 Vercel 一键部署步骤：</h3><ol>
+<li><p>前往 <a target="_blank" rel="noopener" href="https://github.com/senshinya/MoonTV">MoonTV GitHub 项目</a> 并点击右上角 <code>Fork</code> 本仓库；</p>
+</li>
+<li><p>登陆 <a target="_blank" rel="noopener" href="https://vercel.com/">Vercel</a>，点击 <strong>Add New → Project</strong>，选择 Fork 后的仓库。</p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726105629589.png" alt="CleanShot 2025-07-26 at 10.56.16"></p>
+</li>
+<li><p>（强烈建议）设置 PASSWORD 环境变量。</p>
+</li>
+<li><p>保持默认设置完成首次部署。</p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726105805446.png" alt="CleanShot 2025-07-26 at 10.57.46"></p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726110109228.png" alt="CleanShot 2025-07-26 at 11.00.53"></p>
+</li>
+<li><p>如需自定义 <code>config.json</code>，请直接修改 Fork 后仓库中该文件。</p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726111330349.png" alt="CleanShot 2025-07-26 at 11.13.18"></p>
+</li>
+</ol>
+<p>📌 每次修改代码并提交到 <code>main</code> 分支，Vercel 都会自动重新构建并部署最新版本。</p>
+<p>部署完成后即可通过分配的域名访问，也可以绑定自定义域名。</p>
+<h2 id="🌐-其他部署方式"><a href="#🌐-其他部署方式" class="headerlink" title="🌐 其他部署方式"></a>🌐 其他部署方式</h2><p>MoonTV 还支持通过 Cloudflare Pages、Docker、群晖 NAS、飞牛 OS 等方式部署，适合进阶用户或有本地服务器的场景。</p>
+<p>👉 <strong>请访问官网或 GitHub 获取完整部署文档</strong>：<a target="_blank" rel="noopener" href="https://github.com/senshinya/MoonTV">https://github.com/senshinya/MoonTV</a></p>
+<h2 id="🔑-管理后台与高级配置"><a href="#🔑-管理后台与高级配置" class="headerlink" title="🔑 管理后台与高级配置"></a>🔑 管理后台与高级配置</h2><p>如使用 Redis、D1、Upstash 等云存储方式，MoonTV 可开启多用户与后台管理功能：</p>
+<ol>
+<li><p>完成普通部署并成功访问。</p>
+</li>
+<li><p>在 <a target="_blank" rel="noopener" href="https://upstash.com/">upstash</a> 注册账号并新建一个 Redis 实例，名称任意。</p>
+</li>
+<li><p>复制新数据库的 <strong>HTTPS ENDPOINT 和 TOKEN</strong></p>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726140517706.png" alt="CleanShot 2025-07-26 at 14.05.08"></p>
+</li>
+<li><p>返回你的 Vercel 项目，新增环境变量 <strong>UPSTASH_URL 和 UPSTASH_TOKEN</strong>，值为第二步复制的 endpoint 和 token</p>
+</li>
+<li><p>设置环境变量 NEXT_PUBLIC_STORAGE_TYPE，值为 <strong>upstash</strong>；设置 USERNAME 和 PASSWORD 作为站长账号</p>
+</li>
+<li><p>重试部署</p>
+</li>
+</ol>
+<ul>
+<li>设置环境变量：<ul>
+<li><code>USERNAME</code>：管理员用户名</li>
+<li><code>PASSWORD</code>：管理员密码</li>
+<li><code>NEXT_PUBLIC_STORAGE_TYPE</code>：存储类型，如 redis&#x2F;d1&#x2F;upstash</li>
+</ul>
+</li>
+<li>登录后访问 <code>/admin</code> 即可进行：<ul>
+<li>用户权限管理</li>
+<li>修改 config.json</li>
+<li>查看访问记录</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/wuyueerhao/pigoimg/master/20250726140354153.png" alt="CleanShot 2025-07-26 at 14.03.39@2x"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MoonTV/" rel="tag"># MoonTV</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/git-How%20to%20apply%20modifications%20of%20a%20certain%20subfolder%20to%20another%20branch/" rel="prev" title="git 如何将某个子文件夹的修改应用到另一分支">
+                  <i class="fa fa-chevron-left"></i> git 如何将某个子文件夹的修改应用到另一分支
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ERROR404</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wuyueerhao","repo":"comments","client_id":"4697c6556f23e5a42ef5","client_secret":"bc54d233eb1f60401c2287b530a4aaa51d4bdcf2","admin_user":"wuyueerhao","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"en","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d3078db6b68b71e5e0ccb54f00598494"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
